@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yahoo!ローカルサーチ検索テスト</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Yahoo!ローカルサーチAPI検索テスト</h1>
+      <div>
+        <div>
+          <label for="latitude">中心の緯度:</label>
+          <input type="text" id="latitude" placeholder="例: 35.6895" required />
+
+          <label for="longitude">中心の経度:</label>
+          <input
+            type="text"
+            id="longitude"
+            placeholder="例: 139.6917"
+            required
+          />
+        </div>
+        <div>
+          <label for="range">検索範囲(m):</label>
+          <input
+            type="number"
+            id="range"
+            placeholder="例: 500"
+            min="100"
+            step="100"
+            required
+          />
+        </div>
+        <div>
+          <label for="keyword">施設名称/カテゴリー名称:</label>
+          <input type="text" id="keyword" placeholder="例: レストラン" />
+          <div>
+            <label for="category">カテゴリー名称:</label>
+            <input type="text" id="category" placeholder="例: グルメ" />
+
+            <label for="gc">業種コード:</label>
+            <input type="text" id="gc" placeholder="例: 01" />
+          </div>
+        </div>
+        <button onclick="fetchLocalSearch()">検索</button>
+      </div>
+
+      <h2>検索結果</h2>
+      <div id="results"></div>
+    </div>
+
+    <!-- Begin Yahoo! JAPAN Web Services Attribution Snippet -->
+    <span style="margin: 15px 15px 15px 15px">
+      <a href="https://developer.yahoo.co.jp/sitemap/"
+        >Webサービス by Yahoo! JAPAN</a
+      >
+    </span>
+    <!-- End Yahoo! JAPAN Web Services Attribution Snippet -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
